@@ -19,5 +19,8 @@
     "husky": "^9.1.7",
     "turbo": "^2.5.8",
     "typescript": "^5.9.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["@clerk/shared", "sharp", "unrs-resolver"]
   }
 }
