@@ -1,0 +1,5 @@
+* @your-org/platform-team
+
+# Adjust owners by team area when repositories and teams exist.
+/apps/web/ @your-org/web-team
+/packages/tenant-core/ @your-org/platform-team

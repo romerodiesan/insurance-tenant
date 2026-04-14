@@ -1,0 +1,13 @@
+{
+  "name": "@repo/config",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    "./eslint/nextjs": "./eslint/nextjs.mjs",
+    "./typescript/base": "./typescript/base.json",
+    "./prettier": "./prettier.cjs"
+  },
+  "dependencies": {
+    "eslint-config-next": "^16.0.0"
+  }
+}

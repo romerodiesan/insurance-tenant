@@ -1,0 +1,22 @@
+{
+  "name": "@repo/tenant-core",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "echo \"No lint configured\"",
+    "test": "echo \"No tests yet\"",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "format": "prettier --check ."
+  },
+  "dependencies": {
+    "@repo/types": "workspace:*",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.3"
+  }
+}
