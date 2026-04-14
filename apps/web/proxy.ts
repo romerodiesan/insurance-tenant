@@ -5,6 +5,7 @@ import {
   resolveTenantByHost,
   resolveTenantBySlug
 } from "@repo/tenant-core";
+import { resolveTenantByCustomDomain } from "@/lib/domain-store";
 import { NextResponse } from "next/server";
 
 const isPublicRoute = createRouteMatcher([
@@ -42,7 +43,11 @@ export default clerkMiddleware(async (auth, req) => {
   const rootDomain = process.env.ROOT_DOMAIN ?? "localhost";
   const devTenantSlug = process.env.DEV_TENANT_SLUG ?? "tenant-a";
   const host = req.headers.get("host");
-  let tenant = resolveTenantByHost(host, rootDomain);
+  let tenant = resolveTenantByCustomDomain(host);
+
+  if (!tenant) {
+    tenant = resolveTenantByHost(host, rootDomain);
+  }
 
   // In local development it is common to access by LAN IP/localhost without subdomain.
   // Use a controlled fallback tenant on local/LAN hosts to avoid missing-context crashes.
