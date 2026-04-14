@@ -34,3 +34,12 @@ export function resolveTenantByHost(host: string | null, rootDomain: string): Te
 
   return tenant;
 }
+
+export function resolveTenantBySlug(slug: string): Tenant | null {
+  const tenant = defaultTenants.find((item) => item.slug === slug);
+  if (!tenant || tenant.status !== "active") {
+    return null;
+  }
+
+  return tenant;
+}
