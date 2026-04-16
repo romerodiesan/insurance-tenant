@@ -11,7 +11,7 @@
     "format": "prettier --check ."
   },
   "dependencies": {
-    "@clerk/nextjs": "^6.21.0",
+    "@clerk/nextjs": "^6.39.2",
     "@repo/tenant-core": "workspace:*",
     "@repo/types": "workspace:*",
     "next": "^16.0.0",
